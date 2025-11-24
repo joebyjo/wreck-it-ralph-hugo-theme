@@ -1,0 +1,8 @@
+<!-- <p class="social-links">Links: <a href="https://github.com/joebyjo">Github</a> | <a href="https://www.linkedin.com/in/joe-byjo-8ba67528a/">Linkedin</a> | <a href="mailto:joebyjo@gmail.com">E-mail</a> </p>-->
+<div class="social-links">
+    Links:
+    {{ $links := .Site.Data.socials }}
+    {{ range $i, $link := $links }}
+    <a href="{{ $link.url }}"><span class="pnk">{{ $link.name }}</span></a>{{ if lt (add $i 1) (len $links) }} | {{ end }}
+    {{ end }}
+</div>

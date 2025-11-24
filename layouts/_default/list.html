@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div id="ascii-container">
+    {{- partial "ascii_box.html" . -}}
+    <div class="content-container">
+        <div class="engagement">
+            {{ range .Pages }}
+            <div class="engagement">
+                <div>
+                    <span class="gy">::</span>
+                    <a href="{{ .RelPermalink }}"><span class="bb">{{ .Title }}</span> <span class="pnk">[Open]</span></a>
+                </div>
+                {{ with .Params.description }}
+                <div class="engagement-description">
+                    <span class="prp">"{{ . }}"</span>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+
+    </div>
+</div>
+{{ end }}

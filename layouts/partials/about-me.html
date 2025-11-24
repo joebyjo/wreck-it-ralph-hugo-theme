@@ -1,0 +1,7 @@
+<div id="about-me">
+    {{ with .Site.GetPage "page" "about-me.md" }}
+        <p>{{ .Content }}</p>
+    {{ else }}
+        <p>About Me section coming soon!</p>
+    {{ end }}
+</div>

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div id="ascii-container">
+    {{- partial "ascii_box.html" . -}}
+    <!-- Content Positioned Inside the ASCII Box -->
+    <div class="content-container">
+        {{ partial "social-links.html" . }}
+        {{ partial "skills-icons.html" . }}
+        {{ partial "about-me.html" . }}
+        {{ partial "engagements.html" . }}
+    </div>
+</div>
+{{ end }}

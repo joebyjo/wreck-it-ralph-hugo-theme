@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div id="ascii-container">
+
+    <!-- ASCII header box -->
+    <div class="box-container">
+        <pre id="ascii-box">
+    <span class="bb">{{ .Title }}</span>
+    Published: {{ .Date.Format "2 Jan 2006" }}{{ with .Params.author }}  — {{ . }}{{ end }}
+        </pre>
+    </div>
+
+    <!-- Actual blog content -->
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+</div>
+{{ end }}
