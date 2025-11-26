@@ -1,4 +1,4 @@
-const blockcodes = document.querySelectorAll(".chroma code[data-lang]");
+const blockcodes = document.querySelectorAll(".highlight code[data-lang]");
 
 for (const bc of blockcodes) {
   const parent = bc.parentElement;

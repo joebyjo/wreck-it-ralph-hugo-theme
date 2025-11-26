@@ -2,13 +2,28 @@
 <div id="ascii-container">
     {{- partial "ascii_box.html" . -}}
     <div class="content-container text-wrap">
+
+        <h1 class="post-title">
+            <a href="{{ .Permalink }}"><span class="y">Posts for: #{{ .Title | markdownify }}</span></a>
+        </h1>
+
+        {{ with .Content }}
+        <div class="item-description">
+            <span class="prp">"{{ . }}"</span>
+        </div>
+        {{ end }}
+
         <div class="item">
             {{ range .Paginator.Pages }}
             <div class="item">
                 <div>
                     <span class="gy">::</span>
-                    <a href="{{ .RelPermalink }}"><span class="bb">{{ .Title }}</span> <span class="pnk">[Open]</span></a>
+                    <a href="{{ .RelPermalink }}">
+                        <span class="bb">{{ .Title }}</span>
+                        <span class="pnk">[Open]</span>
+                    </a>
                 </div>
+
                 {{ with .Params.description }}
                 <div class="item-description">
                     <span class="prp">"{{ . }}"</span>
@@ -17,7 +32,8 @@
             </div>
             {{ end }}
         </div>
-    {{ partial "pagination.html" . }}
+
+        {{ partial "pagination.html" . }}
     </div>
 </div>
 {{ end }}

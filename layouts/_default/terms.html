@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div id="ascii-container">
+    {{- partial "ascii_box.html" . -}}
+
+    <div class="content-container text-wrap">
+
+        <h1 class="post-title">
+            <a href="{{ .Permalink }}"><span class="y">{{ .Title | markdownify }}</span></a>
+        </h1>
+
+        <div class="item">
+            {{ $type := .Type }}
+            {{ range $key, $value := .Data.Terms.Alphabetical }}
+                {{ $name := .Name }}
+                {{ $count := .Count }}
+
+                {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+                <div class="item">
+                    <div>
+                        <span class="gy">::</span>
+                        <a href="{{ .Permalink }}">
+                            <span class="bb">{{ .Name }}</span>
+                            <span class="pnk">[{{ $count }}]</span>
+                        </a>
+                    </div>
+                </div>
+                {{ end }}
+
+            {{ end }}
+        </div>
+
+    </div>
+</div>
+{{ end }}

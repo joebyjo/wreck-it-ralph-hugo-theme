@@ -6,7 +6,7 @@ pre:not(.chroma) {
   padding: 10px;
 }
 
-pre.chroma {
+.highlight pre {
   margin: 0;
   padding: 10px 0;
   color: var(--foreground);
@@ -59,6 +59,7 @@ code {
   font-size: 13px;
   font-weight: 500;
   border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
   appearance: none;
   cursor: pointer;
   outline: none;

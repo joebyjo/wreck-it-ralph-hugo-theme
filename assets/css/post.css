@@ -15,7 +15,7 @@
   margin-bottom: 0;
 }
 
-.posts {
+/* .posts {
   width: 100%;
 }
 
@@ -23,11 +23,11 @@
   width: 100%;
   text-align: left;
   padding: 30px 0;
-}
+} */
 
-.post:not(:last-of-type) {
+/* .post:not(:last-of-type) {
   border-bottom: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
-}
+} */
 
 .post-meta {
   font-size: inherit;
@@ -43,12 +43,12 @@
 
 .post-title {
   position: relative;
-  color: var(--accent);
-  margin-top: 0 !important;
-  margin-bottom: 15px !important;
+  /* color: var(--accent); */
+  /* margin-top: 0 !important; */
+  /* margin-bottom: 15px !important; */
   padding-bottom: 15px;
   border-bottom: 3px dotted var(--accent);
-  text-decoration: none !important;
+  /* text-decoration: none !important; */
 }
 
 .post-title::after {
@@ -75,38 +75,10 @@
   margin: 40px 0;
 }
 
-.post-content {
-  /* margin-top: 25px; */
-}
-
 .post-cover {
   margin: 25px 0;
 }
 
-.post ul {
-  list-style: none;
-}
-
-.post ul li:not(:empty)::before {
-  content: "-";
-  position: absolute;
-  left: -20px;
-  color: var(--accent);
-}
-
-.post--regulation h1 {
-  justify-content: center;
-}
-
-.post--regulation h2 {
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.post--regulation h2 + h2 {
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
 
 .hanchor {
   position: absolute;
