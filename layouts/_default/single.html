@@ -6,11 +6,14 @@
 
     <div class="post-meta">
         {{- if .Date -}}
-        <time class="post-date">
-            {{- .Date | time.Format "02-01-2006" -}}
-        </time>
+            <time class="post-date">
+                {{- .Date | time.Format "02-01-2006" -}}
+            </time>
         {{- end -}}
-        <span>"{{ .Description }}"</span>
+
+        {{- if .Description -}}
+            <span>[ {{ .Description }} ]</span>
+        {{- end -}}
     </div>
 
     {{ if .Params.tags }}
@@ -44,7 +47,7 @@
     </div>
 
     {{ if eq .Type $.Site.Params.contentTypeName }}
-    {{ partial "posts_pagination.html" . }}
+        {{ partial "posts_pagination.html" . }}
     {{ end }}
 </div>
 

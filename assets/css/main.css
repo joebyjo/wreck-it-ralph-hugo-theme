@@ -15,27 +15,49 @@
     --radius: 5px;
 }
 
-.y { color: var(--accent); }
+.y {
+    color: var(--accent);
+}
 
-.gy { color: #f5ff98; }
+.gy {
+    color: #f5ff98;
+}
 
-.prp { color: #cc99ff; }
+.prp {
+    color: #cc99ff;
+}
 
-.pnk { color: #ff99cc; }
+.pnk {
+    color: #ff99cc;
+}
 
-.w { color: #ffffff; }
+.w {
+    color: #ffffff;
+}
 
-.iky { color: #74ee15; }
+.iky {
+    color: #74ee15;
+}
 
-.gr { color: #b5bd68; }
+.gr {
+    color: #b5bd68;
+}
 
-.r { color: #f22e2e; }
+.r {
+    color: #f22e2e;
+}
 
-.bb { color: #98f5ff; }
+.bb {
+    color: #98f5ff;
+}
 
-.l { color: #c5c8c6; }
+.l {
+    color: #c5c8c6;
+}
 
-.lg { color: #9de9a9; }
+.lg {
+    color: #9de9a9;
+}
 
 
 body {
@@ -137,7 +159,7 @@ pre {
     /* align-items: center; */
 }
 
-.text-wrap{
+.text-wrap {
     width: 75ch;
     padding-top: 160px;
 }
@@ -206,6 +228,85 @@ a:hover {
     margin: 20px 0px 30px 0px;
 }
 
+/* EXPERIENCE SECTION */
+
+#experience-section {
+    margin-top: 60px;
+}
+
+/* Each job entry */
+.experience-item {
+    /* margin: 0; */
+    padding-left: 15px;
+}
+
+/* Remove default triangle marker */
+.experience-item summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.experience-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Summary row layout */
+.experience-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Bigger logo */
+.experience-logo img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    padding: 0;
+    object-fit: contain;
+}
+
+/* Main text */
+.experience-main {
+    flex: 1;
+}
+
+.experience-role {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.experience-meta {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Toggle indicator */
+.experience-toggle {
+    font-size: 16px;
+    margin-left: auto;
+}
+
+/* When open, change indicator */
+.experience-toggle::before {
+    content: "[+]";
+}
+
+.experience-item[open] .experience-toggle::before {
+    content: "[-]";
+}
+
+.experience-description {
+    margin-bottom: 10px;
+}
+
+/* Links */
+.experience-links a {
+    margin-right: 12px;
+    font-size: 14px;
+}
+
 .item-description {
     margin-top: 10px;
     margin-left: 25px;
@@ -217,13 +318,84 @@ a:hover {
 }
 
 .footer {
-  padding: 40px 0;
-  flex-grow: 0;
-  opacity: 0.65;
+    padding: 40px 0;
+    flex-grow: 0;
+    opacity: 0.65;
 }
 
 .error-page {
     margin: auto;
     text-align: center;
     max-width: 600px;
+}
+
+/* Hidden details content */
+.experience-details {
+    margin-left: 90px;
+    margin-top: 12px;
+    padding-bottom: 10px;
+}
+
+.experience-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+/* Inner wrapper expands */
+.experience-details-inner {
+    overflow: hidden;
+}
+
+/* When open */
+.experience-item[open] .experience-details {
+    grid-template-rows: 1fr;
+}
+
+/* Highlights list */
+.experience-highlights {
+    margin: 10px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.experience-highlights li {
+    margin: 6px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Skills section */
+.experience-skills {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* Tag styling */
+.skill-tag {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 4px 10px;
+    border: 1px solid color-mix(in srgb, var(--foreground) 25%, transparent);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+
+.experience-subrole {
+    position: relative;
+    margin-bottom: 18px;
+    padding-left: 25px;
+}
+
+.experience-subrole::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
 }

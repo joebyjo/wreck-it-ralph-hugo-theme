@@ -1,0 +1,79 @@
+<div id="experience-section">
+    <span class="y">
+        ------------------------------ <span class="w">Experience</span> ---------------------------------
+    </span>
+
+    {{ range .Site.Data.experience }}
+
+    <details class="experience-item">
+
+        <summary class="experience-summary">
+
+            <span class="experience-logo">
+                {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .company }} logo">
+                {{ end }}
+            </span>
+
+            <span class="experience-main">
+                {{ $last := index .roles (sub (len .roles) 1) }}
+
+                <span class="experience-role">
+                    <span class="bb">{{ $last.role }}</span>
+                    <span class="gy"> @ </span>
+                    <span class="w">{{ .company }}</span>
+                </span>
+
+                <span class="experience-meta">
+                    <span class="l">
+                        {{ (index .roles 0).start }} → {{ (index .roles (sub (len .roles) 1)).end }}
+                    </span>
+                </span>
+            </span>
+
+            <span class="experience-toggle pnk"></span>
+
+        </summary>
+
+        <div class="experience-details">
+            <div class="experience-details-inner">
+
+                {{ range (collections.Reverse .roles) }}
+
+                <div class="experience-subrole">
+
+                    <div class="bb">{{ .role }}</div>
+
+                    <div class="experience-meta">
+                        <span class="l">{{ .start }} → {{ .end }}</span>
+                        <span class="pnk">[{{ .type }}]</span>
+                    </div>
+
+                    {{ with .highlights }}
+                    <ul class="experience-highlights">
+                        {{ range . }}
+                        <li><span class="gy">→</span> {{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+
+                    {{ with .skills }}
+                    <div class="experience-skills">
+                        {{ range . }}
+                        <span class="skill-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                </div>
+
+                {{ end }}
+
+            </div>
+        </div>
+
+    </details>
+
+    {{ end }}
+
+</div>
