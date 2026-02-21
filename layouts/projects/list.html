@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+<div id="ascii-container">
+    {{ partial "ascii_box.html" . }}
+
+    <div class="content-container text-wrap">
+
+        <div class="project-grid">
+
+            {{ range .Pages.ByDate.Reverse }}
+
+            <a class="project-card" href="{{ .RelPermalink }}">
+
+                {{ with .Params.cover }}
+                <img src="{{ . }}" class="project-thumb">
+                {{ end }}
+
+                <div class="project-body">
+
+                    <div class="project-title">
+                        {{ .Title }}
+                    </div>
+
+                    {{ with .Params.description }}
+                    <div class="project-desc">
+                        {{ . }}
+                    </div>
+                    {{ end }}
+
+                    {{ with .Params.tags }}
+                    <div class="project-tags">
+                        {{ range . }}
+                        <span class="skill-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                </div>
+
+            </a>
+
+            {{ end }}
+
+        </div>
+
+    </div>
+</div>
+
+{{ end }}
