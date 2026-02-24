@@ -1,0 +1,10 @@
+name = "wreck-it-ralph"
+license = "GPL-3.0"
+description = "Custom Hugo theme"
+homepage = "https://github.com/joebyjo/wreck-it-ralph-hugo-theme"
+
+min_version = "0.151.2"
+
+[author]
+  name = "Joe Byjo"
+  homepage = "https://github.com/joebyjo"
