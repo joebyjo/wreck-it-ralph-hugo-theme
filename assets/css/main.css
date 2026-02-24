@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "TopazPlus";
-    src: url(https://github.com/skill-issue-org/web/raw/c6a274b39b0de198aefbc4453635e60ded4f06e7/assets/fonts/topazplus500.ttf);
-}
-
 :root {
     --background: #0c0d10;
     --post-background: #1a170f;
@@ -65,12 +60,13 @@ body {
     /* padding: 1em 0 1em 0; */
     background-color: var(--background);
     color: var(--foreground);
-    font-family: "TopazPlus", monospace;
+    font-family: monospace;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     font-size: var(--font-size);
 }
 
@@ -143,6 +139,9 @@ pre {
     margin: 0;
     font-family: "TopazPlus", "Lucida Console", monospace;
     /* line-height: 16px; */
+
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 #ascii-box .name-block {
@@ -160,8 +159,22 @@ pre {
 }
 
 .text-wrap {
-    width: 75ch;
+    width: 100%;
     padding-top: 160px;
+    max-width: 75ch;
+}
+
+@media (max-width: 700px) {
+
+    .text-wrap {
+        max-width: 63%;
+        padding-top: 160px;
+    }
+
+    #ascii-container {
+        width: 80vw;
+    }
+
 }
 
 .post-content {
@@ -231,7 +244,7 @@ a:hover {
 /* EXPERIENCE SECTION */
 
 #experience-section {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 /* Each job entry */
@@ -400,93 +413,93 @@ a:hover {
     border-radius: 50%;
 }
 
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:28px;
-  margin-top:40px;
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
 }
 
-.project-card{
-  display:flex;
-  flex-direction:column;
-  background:color-mix(in srgb,var(--foreground) 4%,transparent);
-  border:1px solid color-mix(in srgb,var(--foreground) 12%,transparent);
-  border-radius:8px;
-  text-decoration:none;
-  color:inherit;
-  overflow:hidden;
-  transition:.25s ease;
-}
-
-
-.project-card:hover{
-  transform:translateY(-4px);
-  border-color:var(--accent);
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: color-mix(in srgb, var(--foreground) 4%, transparent);
+    border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: .25s ease;
 }
 
 
-.project-thumb{
-  width:100%;
-  height:170px;
-  object-fit:cover;
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
 }
 
 
-.project-body{
-  padding:18px;
-}
-
-.project-title{
-  font-size:18px;
-  color:#98f5ff;
-  margin-bottom:10px;
-}
-
-.project-desc{
-  font-size:14px;
-  opacity:.85;
-  margin-bottom:12px;
-  line-height:1.45;
-}
-
-.project-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-}
-
-.project-card img{
-    display:block;
-    width:100%;
-    height:170px;
-
-    object-fit:cover;
-
-    border:none !important;
-    padding:0 !important;
-    margin:0 !important;
-
-    border-radius:0;
-    background:none;
-    box-shadow:none;
-
-    max-width:none;
+.project-thumb {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
 }
 
 
-.project-thumb{
+.project-body {
+    padding: 18px;
+}
+
+.project-title {
+    font-size: 18px;
+    color: #98f5ff;
+    margin-bottom: 10px;
+}
+
+.project-desc {
+    font-size: 14px;
+    opacity: .85;
+    margin-bottom: 12px;
+    line-height: 1.45;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+
+    max-width: none;
+}
+
+
+.project-thumb {
     transition: transform .35s ease;
 }
 
-.project-card:hover .project-thumb{
-    transform:scale(1.04);
+.project-card:hover .project-thumb {
+    transform: scale(1.04);
 }
 
-.project-thumb{
-    border-bottom:1px solid color-mix(in srgb,var(--foreground) 12%,transparent);
+.project-thumb {
+    border-bottom: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
 }
 
 .project-card:not(:has(img)) {
-    padding-top:6px;
+    padding-top: 6px;
 }
