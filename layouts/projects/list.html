@@ -12,11 +12,7 @@
             <a class="project-card" href="{{ .RelPermalink }}">
 
                 {{ with .Params.cover }}
-                    {{- if .Resources.GetMatch . }}
-                        <img src="{{ (.Resources.GetMatch .).RelPermalink }}" alt="" class="project-thumb">
-                    {{- else -}}
-                        <img src="{{ absURL . }}" alt="" class="project-thumb">
-                    {{- end -}}
+                <img src="{{ absURL . }}" class="project-thumb">
                 {{ end }}
 
                 <div class="project-body">
