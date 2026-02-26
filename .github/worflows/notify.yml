@@ -1,0 +1,20 @@
+name: Notify blog when theme releases
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  notify:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Trigger blog rebuild
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.BLOG_DISPATCH_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/joebyjo/joeblogo/dispatches \
+          -d '{"event_type":"theme-release"}'
