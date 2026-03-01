@@ -1,0 +1,29 @@
+[
+	{
+		"company": "",
+		"logo": "images/experience/logo.png",
+		"links": [
+			{
+				"url": "",
+				"label": "[Website]"
+			}
+		],
+		"roles": [
+			{
+				"role": "",
+				"start": "Dec 2025",
+				"end": "Mar 2026",
+				"type": "On-Site",
+				"highlights": [],
+				"skills": []
+			},
+			{
+				"role": "",
+				"start": "Mar 2026",
+				"end": "Present",
+				"type": "On-Site",
+				"highlights": [],
+				"skills": []
+			}
+		]
+	}]

@@ -1,0 +1,6 @@
+- name: "Github"
+  url: "https://github.com/username"
+- name: "Linkedin"
+  url: "https://www.linkedin.com/in/username/"
+- name: "E-mail"
+  url: "mailto:example@gmail.com"
