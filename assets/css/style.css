@@ -48,10 +48,6 @@ table {
   text-decoration: underline;
 }
 
-.post-container {
-  width: 60vw;
-}
-
 button {
   position: relative;
   font: inherit;

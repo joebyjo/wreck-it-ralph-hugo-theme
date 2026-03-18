@@ -185,18 +185,18 @@ a:hover {
 }
 
 .section-divider {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 30px 0;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0;
+    width: 100%;
 }
 
 .section-divider::before,
 .section-divider::after {
-  content: "";
-  flex: 1;
-  border-top: 1px dashed;
+    content: "";
+    flex: 1;
+    border-top: 1px dashed;
 }
 
 .social-links {
@@ -447,7 +447,10 @@ a:hover {
     padding: 20px 70px;
     border-radius: var(--radius);
     border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
-    /* width: 60vw; */
+}
+
+.post-container {
+    width: 60vw;
 }
 
 .footer {
@@ -517,7 +520,6 @@ a:hover {
         padding: 8px 0;
     }
 
-    /* Section divider — dashed line instead of hyphens */
     .section-divider::before,
     .section-divider::after {
         content: "";
@@ -527,7 +529,6 @@ a:hover {
         align-self: center;
     }
 
-    /* Experience */
     .experience-details {
         margin-left: 0;
     }
@@ -552,10 +553,12 @@ a:hover {
         height: 28px;
     }
 
-    /* Misc */
     .post-content {
-        width: 90vw;
         padding: 16px 20px;
+    }
+
+    .post-container {
+        width: 90vw;
     }
 
     .project-grid {
