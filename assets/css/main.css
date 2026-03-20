@@ -229,10 +229,23 @@ a:hover {
     overflow: visible;
 }
 
+.about-cmd {
+    color: color-mix(in srgb, #9de9a9, black 5%);
+    margin-bottom: 6px;
+    font-size: var(--font-size);
+    font-weight: bolder;
+}
 
-#about-me {
-    word-wrap: break-word;
-    margin: 20px 0 30px;
+.about-cmd::before {
+    content: "$ ";
+    color: #f5ff98;
+}
+
+.about-output p {
+    color: #dddddd;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 4px;
 }
 
 #experience-section {
