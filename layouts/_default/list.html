@@ -2,22 +2,30 @@
 <div id="ascii-container">
     {{- partial "ascii_box.html" . -}}
     <div class="content-container text-wrap">
-        <div class="item">
-            {{ range .Paginator.Pages }}
-            <div class="item">
-                <div>
-                    <span class="gy">::</span>
-                    <a href="{{ .RelPermalink }}"><span class="bb">{{ .Title }}</span> <span class="pnk">[Open]</span></a>
-                </div>
-                {{ with .Params.description }}
-                <div class="item-description">
-                    <span class="prp">"{{ . }}"</span>
-                </div>
-                {{ end }}
+        <span class="section-divider y">
+            <span class="w">{{ .Title }}</span>
+        </span>
+
+        <div class="ls-cmd">ls -la ~/posts</div>
+        <div class="ls-total">total {{ len .Paginator.Pages }}</div>
+
+        {{ range .Paginator.Pages }}
+        <a href="{{ .RelPermalink }}" class="ls-entry">
+            <div class="ls-row">
+                <span class="ls-perm">-rw-r--r--</span>
+                <span class="ls-date">{{ .Date.Format "Jan 2006" }}</span>
+                <span class="ls-name">{{ .Title }}</span>
+                <span class="ls-size">{{ div (len .Content) 1024 }}.{{ mod (div (len .Content) 102) 10 }}K</span>
             </div>
+            {{ with .Params.description }}
+                <div class="ls-desc">"{{ . }}"</div>
             {{ end }}
-        </div>
-    {{ partial "pagination.html" . }}
+
+        </a>
+        {{ end }}
+
+        {{ partial "pagination.html" . }}
+
     </div>
 </div>
 {{ end }}
