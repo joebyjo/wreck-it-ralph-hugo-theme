@@ -253,15 +253,11 @@ a:hover {
 }
 
 .experience-item {
-    padding-left: 15px;
-}
-
-.experience-item {
     border: 1px solid rgba(255, 162, 152, 0.25);
     border-radius: 4px;
-    padding: 12px 14px;
+    padding: 12px 14px 0 15px;
     margin-bottom: 12px;
-    transition: border-color 0.2s ease;
+    /* transition: border-color 0.2s ease; */
 }
 
 
@@ -326,7 +322,7 @@ a:hover {
 .experience-details {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.35s ease;
+    /* transition: grid-template-rows 0.35s ease; */
     margin-left: 90px;
     margin-top: 12px;
     padding-bottom: 10px;
