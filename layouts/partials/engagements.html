@@ -4,18 +4,20 @@
     </span>
 
     {{ range .Site.Data.engagements }}
-    <div class="item">
+    <div class="engagement-item">
         <div>
             <span class="gy">::</span>
-            <span class="bb">{{ .title }}</span>
-            {{ with .links }}
-            {{ range $index, $link := . }}
-            <a href="{{ $link.url }}"><span class="pnk">{{ $link.linkLabel }}</span></a>
-            {{ end }}
-            {{ end }}
+            <div class="engagement-item-content">
+                <span class="bb">{{ .title }}</span>
+                {{ with .links }}
+                {{ range $index, $link := . }}
+                <a href="{{ $link.url }}"><span class="pnk">{{ $link.linkLabel }}</span></a>
+                {{ end }}
+                {{ end }}
+            </div>
         </div>
-        <div class="item-description">
-            <span class="prp">"{{ .description }}"</span>
+        <div class="engagement-item-description">
+            <span class="prp">{{ .description }}</span>
         </div>
     </div>
     {{ end }}
