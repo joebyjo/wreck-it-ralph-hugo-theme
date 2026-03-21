@@ -6,19 +6,19 @@
             <span class="w">{{ .Title }}</span>
         </span>
 
-        <div class="ls-cmd">ls -la ~/posts</div>
-        <div class="ls-total">total {{ len .Paginator.Pages }}</div>
+        <div class="cmd">ls -la ~/posts</div>
+        <div class="ls-total dg">total {{ len .Paginator.Pages }}</div>
 
         {{ range .Paginator.Pages }}
         <a href="{{ .RelPermalink }}" class="ls-entry">
             <div class="ls-row">
-                <span class="ls-perm">-rw-r--r--</span>
-                <span class="ls-date">{{ .Date.Format "Jan 2006" }}</span>
-                <span class="ls-name">{{ .Title }}</span>
-                <span class="ls-size">{{ div (len .Content) 1024 }}.{{ mod (div (len .Content) 102) 10 }}K</span>
+                <span class="ls-perm dy">-rw-r--r--</span>
+                <span class="ls-date do">{{ .Date.Format "Jan 2006" }}</span>
+                <span class="ls-name bb">{{ .Title }}</span>
+                <span class="ls-size dg">{{ div (len .Content) 1024 }}.{{ mod (div (len .Content) 102) 10 }}K</span>
             </div>
             {{ with .Params.description }}
-                <div class="ls-desc">"{{ . }}"</div>
+                <div class="ls-desc prp">"{{ . }}"</div>
             {{ end }}
 
         </a>

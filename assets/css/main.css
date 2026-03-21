@@ -18,6 +18,10 @@
     color: #f5ff98;
 }
 
+.dy {
+    color: rgba(245, 255, 152, 0.4);
+}
+
 .prp {
     color: #cc99ff;
 }
@@ -42,12 +46,20 @@
     color: #f22e2e;
 }
 
+.do {
+    color: rgba(255, 162, 152, 0.5);
+}
+
 .bb {
     color: #98f5ff;
 }
 
 .l {
     color: #c5c8c6;
+}
+
+.dg {
+    color: rgba(197, 200, 198, 0.4);
 }
 
 .lg {
@@ -229,14 +241,14 @@ a:hover {
     overflow: visible;
 }
 
-.about-cmd {
+.cmd {
     color: color-mix(in srgb, #9de9a9, black 5%);
     margin-bottom: 6px;
     font-size: var(--font-size);
     font-weight: bolder;
 }
 
-.about-cmd::before {
+.cmd::before {
     content: "$ ";
     color: #f5ff98;
 }
@@ -504,19 +516,7 @@ a:hover {
     width: 60vw;
 }
 
-.ls-cmd {
-    color: rgba(245, 255, 152, 0.7);
-    font-size: var(--font-size);
-    margin-bottom: 4px;
-}
-
-.ls-cmd::before {
-    content: "$ ";
-    color: #f5ff98;
-}
-
 .ls-total {
-    color: rgba(197, 200, 198, 0.4);
     font-size: 13px;
     margin-bottom: 6px;
 }
@@ -525,10 +525,6 @@ a:hover {
     display: block;
     text-decoration: none;
     color: inherit;
-}
-
-.ls-entry:hover .ls-row {
-    background: rgba(255, 162, 152, 0.07);
 }
 
 .ls-entry:hover {
@@ -544,32 +540,27 @@ a:hover {
 }
 
 .ls-perm {
-    color: rgba(245, 255, 152, 0.4);
     font-size: 13px;
     flex-shrink: 0;
 }
 
 .ls-date {
-    color: rgba(255, 162, 152, 0.5);
     font-size: 13px;
     flex-shrink: 0;
     min-width: 60px;
 }
 
 .ls-name {
-    color: #98f5ff;
     flex: 1;
     min-width: 0;
 }
 
 .ls-size {
-    color: rgba(197, 200, 198, 0.45);
     font-size: 13px;
     flex-shrink: 0;
 }
 
 .ls-desc {
-    color: #cc99ff;
     font-size: 13px;
     padding: 2px 6px 6px 6px;
 }
@@ -583,7 +574,7 @@ a:hover {
 }
 
 .ls-entry:hover {
-    background: rgba(255, 162, 152, 0.07);
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
 }
 
 .ls-entry:hover .ls-row {
@@ -615,7 +606,6 @@ a:hover {
 
 @media (max-width: 700px) {
 
-    /* Layout */
     .text-wrap {
         max-width: 95%;
         padding-top: 20px;
@@ -704,7 +694,6 @@ a:hover {
         height: 48px;
     }
 
-    /* Skills icons */
     #skills-icons {
         gap: 10px;
     }
@@ -752,7 +741,7 @@ a:hover {
     }
 
     .ls-entry:hover .ls-row {
-        background: rgba(255, 162, 152, 0.07);
+        background: color-mix(in srgb, var(--accent) 7%, transparent);
         border-radius: 3px;
     }
 }

@@ -2,7 +2,7 @@
     <span class="section-divider y">
         <span class="w">whoami</span>
     </span>
-    <div class="about-cmd">cat about_me.txt</div>
+    <div class="cmd">cat about_me.txt</div>
     <div class="about-output">
         {{ with .Site.GetPage "page" "about-brief.md" }}
             {{ .Content }}
