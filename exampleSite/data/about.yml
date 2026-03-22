@@ -1,0 +1,48 @@
+name: JoeByjo
+location: Adelaide, AU
+studying: B. CompSci @ Uni of Adelaide
+status:
+  label: open to work
+  available: true
+
+links:
+  - label: Github
+    url: https://github.com/joebyjo
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/joe-byjo/
+  - label: Email
+    url: mailto:joebyjo@gmail.com
+
+avatar: |
+  ┌────────────┐
+  │  ┌──────┐  │
+  │  │ ◉  ◉ │  │
+  │  │  ▾   │  │
+  │  └──────┘  │
+  │   / JB \   │
+  └────────────┘
+
+skills:
+  - label: Python
+    percent: 90
+  - label: C / C++
+    percent: 70
+  - label: Web Dev
+    percent: 75
+  - label: Security
+    percent: 65
+  - label: ML / Data
+    percent: 60
+
+stack:
+  - Python
+  - C++
+  - C#
+  - React Native
+  - .NET
+  - Flask
+  - GCP
+  - Linux
+  - Git
+  - Burp Suite
+  - ML

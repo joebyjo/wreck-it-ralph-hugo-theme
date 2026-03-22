@@ -1,5 +1,8 @@
+{{ $about := .Site.Data.about }}
 <div id="skills-icons">
-    {{ range .Site.Data.skills }}
-        <img alt="{{ .name }}" src="{{ .icon }}">
+    {{ range $about.skills }}
+        {{ if and .show_icon .icon }}
+            <img alt="{{ .name }}" src="{{ .icon }}">
+        {{ end }}
     {{ end }}
 </div>
