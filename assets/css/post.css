@@ -21,7 +21,7 @@
   color: color-mix(in srgb, var(--foreground) 65%, transparent);
 }
 
-.post-meta > *:not(:first-child)::before {
+.post-meta>*:not(:first-child)::before {
   content: "::";
   display: inline-block;
   margin: 0 8px;
@@ -41,7 +41,7 @@
   display: flex;
   gap: 0;
   align-items: flex-start;
-  width:50vw;
+  width: 50vw;
 }
 
 .post-toc-sidebar {

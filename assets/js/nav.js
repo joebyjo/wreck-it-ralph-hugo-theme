@@ -1,15 +1,11 @@
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.querySelector('.main-menu');
-toggle.addEventListener('click', function() {
+toggle.addEventListener('click', function () {
     menu.classList.toggle('open');
     this.textContent = this.textContent === '☰' ? '✕' : '☰';
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.querySelector('.toc-toggle');
-    const nav = document.getElementById('toc-nav');
-
-
     // active link highlighting based on scroll
     const headings = document.querySelectorAll('.post-content h2, .post-content h3, .post-content h4');
     const tocLinks = document.querySelectorAll('.toc-nav a');

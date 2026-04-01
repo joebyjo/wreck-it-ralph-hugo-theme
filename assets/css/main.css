@@ -280,7 +280,7 @@ a:hover {
 
 .experience-item:hover {
     border-color: rgba(255, 162, 152, 0.7);
-} 
+}
 
 .experience-item summary {
     list-style: none;
@@ -412,7 +412,7 @@ a:hover {
     margin-bottom: 16px;
 }
 
-.engagement-item > div:first-child {
+.engagement-item>div:first-child {
     display: flex;
     align-items: baseline;
     gap: 8px;
@@ -613,7 +613,7 @@ a:hover {
 }
 
 .about-avatar {
-    font-size: calc(var(--font-size) * 1 );
+    font-size: calc(var(--font-size) * 1);
     line-height: 1.35;
     color: color-mix(in srgb, var(--accent) 55%, transparent);
     margin-bottom: 12px;
@@ -699,7 +699,7 @@ a:hover {
     display: none;
 }
 
-.about-content h2 + p {
+.about-content h2+p {
     margin-top: 0;
 }
 
@@ -876,7 +876,7 @@ a:hover {
         border-radius: 3px;
     }
 
-        .about-layout {
+    .about-layout {
         flex-direction: column;
         gap: 0;
     }

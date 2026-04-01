@@ -47,7 +47,8 @@
         <div class="post-content">
             {{- with .Content -}}
             <div>
-                {{ . | replaceRE "(<h[1-6][^>]*id=\"([^\"]+)\"[^>]*>)(.*?)(</h[1-6]>)" `${1}<a href="#${2}" class="hanchor">#</a> ${3}${4}` | safeHTML }}
+                {{ . | replaceRE "(<h[1-6][^>]*id=\"([^\"]+)\"[^>]*>)(.*?)(</h[1-6]>)" `${1}<a href="#${2}"
+                        class="hanchor">#</a> ${3}${4}` | safeHTML }}
             </div>
             {{- end -}}
         </div>
