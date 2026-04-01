@@ -43,7 +43,7 @@ table {
   margin: 25px 0;
 }
 
-.post-container a {
+.post-body a {
   color: var(--accent);
   text-decoration: underline;
 }
@@ -115,10 +115,6 @@ select {
   appearance: none;
 }
 
-input[type="checkbox"] {
-  width: auto;
-}
-
 input:focus-visible,
 input:active,
 textarea:focus-visible,
@@ -154,6 +150,7 @@ select option {
 }
 
 input[type="checkbox"] {
+  width: auto;
   vertical-align: middle;
   padding: 10px;
   box-shadow: inset 0 0 0 3px var(--background);
@@ -292,10 +289,6 @@ pre code {
   border: none;
 }
 
-sup {
-  line-height: 0;
-}
-
 abbr {
   position: relative;
   text-decoration-style: wavy;
@@ -309,6 +302,7 @@ sub {
 
 sup {
   top: -0.25em;
+  line-height: 0;
 }
 
 mark {
@@ -317,27 +311,13 @@ mark {
 }
 
 blockquote {
-  position: relative;
-  border-top: 1px solid var(--accent);
-  border-bottom: 1px solid var(--accent);
-  margin: 0;
-  padding: 25px;
-}
-
-blockquote::before {
-  content: ">";
-  display: block;
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-
-blockquote p:first-child {
-  margin-top: 0;
-}
-
-blockquote p:last-child {
-  margin-bottom: 0;
+  border-top: none;
+  border-bottom: none;
+  border-left: 2px solid rgba(255, 162, 152, 0.4);
+  padding: 6px 12px;
+  margin: 10px 0;
+  color: rgba(221, 221, 221, 0.65);
+  font-size: calc(var(--font-size) * 0.9);
 }
 
 table {
@@ -472,7 +452,7 @@ iframe[src*="youtube.com"] {
   padding: 8px !important;
 }
 
-@media (max-width: 684px) {
+@media (max-width: 700px) {
   :root {
     --font-size: 0.95rem;
   }

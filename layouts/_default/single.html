@@ -1,54 +1,61 @@
 {{ define "main" }}
-<div class="post-container">
-    <h1 class="post-title">
-        <a href="{{ .Permalink }}"><span class="y">{{ .Title | markdownify }}</span></a>
-    </h1>
+<div class="post-layout">
+    <aside class="post-toc-sidebar">
+        <div class="post-toc-inner">
+            <span class="toc-label y">Table of Contents</span>
 
-    <div class="post-meta">
-        {{- if .Date -}}
+            <nav class="toc-nav" id="toc-nav">
+                {{ .TableOfContents }}
+                <div class="toc-divider"></div>
+                <div class="toc-meta">
+                    {{ if .Date }}
+                    <div class="toc-meta-row"><span class="dg">date {{ .Date | time.Format "02-01-2006" }}</span></div>
+                    {{ end }}
+                    {{ if .Params.tags }}
+                    <div class="toc-meta-row dg">tags
+                        {{ range .Params.tags }}
+                        <a href="{{ (urlize (printf " tags/%s/" .)) | absLangURL }}" class="">#{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="post-body">
+        <h1 class="post-title">
+            {{ .Title | markdownify }}
+        </h1>
+
+        <div class="post-meta">
+            {{- if .Date -}}
             <time class="post-date">
                 {{- .Date | time.Format "02-01-2006" -}}
             </time>
-        {{- end -}}
+            {{- end -}}
 
-        {{- if .Description -}}
+            {{- if .Description -}}
             <span>[ {{ .Description }} ]</span>
-        {{- end -}}
-    </div>
-
-    {{ if .Params.tags }}
-    <span class="post-tags">
-        {{ range .Params.tags }}
-        #<a href="{{ (urlize (printf " tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
-        {{ end }}
-    </span>
-    {{ end }}
-
-
-    {{ partial "cover.html" . }}
-
-    {{ if (.Params.Toc | default .Site.Params.Toc) }}
-    <div class="table-of-contents">
-        <h2>
-            {{ (.Params.TocTitle | default .Site.Params.TocTitle) | default "Table of Contents" }}
-        </h2> {{ .TableOfContents }}
-    </div>
-    {{ end }}
-
-    
-
-    <div class="post-content">
-        {{- with .Content -}}
-        <div>
-            {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor"
-                    ariaLabel="Anchor">#</a> ${3}` | safeHTML }}
+            {{- end -}}
         </div>
-        {{- end -}}
-    </div>
 
-    {{ if eq .Type $.Site.Params.contentTypeName }}
+        {{ partial "cover.html" . }}
+
+        <hr class="post-rule">
+
+        <div class="post-content">
+            {{- with .Content -}}
+            <div>
+                {{ . | replaceRE "(<h[1-6][^>]*id=\"([^\"]+)\"[^>]*>)(.*?)(</h[1-6]>)" `${1}<a href="#${2}" class="hanchor">#</a> ${3}${4}` | safeHTML }}
+            </div>
+            {{- end -}}
+        </div>
+
+        {{ if eq .Type $.Site.Params.contentTypeName }}
         {{ partial "posts_pagination.html" . }}
-    {{ end }}
+        {{ end }}
+    </div>
 </div>
 
 {{ end }}

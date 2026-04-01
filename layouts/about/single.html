@@ -4,7 +4,7 @@
     {{- partial "ascii_box.html" . -}}
     <div class="content-container text-wrap">
 
-        <span class="section-divider y">
+        <span class="section-divider">
             <span class="w">{{ .Title }}</span>
         </span>
 
@@ -16,33 +16,33 @@
                 <pre class="about-avatar">{{ . }}</pre>
                 {{ end }}
 
-                <div class="about-meta-label">// name</div>
+                <div class="meta-label">name</div>
                 <div class="about-meta-val">{{ $about.name }}</div>
 
-                <div class="about-meta-label">// location</div>
+                <div class="meta-label">location</div>
                 <div class="about-meta-val">{{ $about.location }}</div>
 
-                <div class="about-meta-label">// studying</div>
+                <div class="meta-label">studying</div>
                 <div class="about-meta-val">{{ $about.studying }}</div>
 
-                <div class="about-meta-label">// status</div>
+                <div class="meta-label">status</div>
                 <div class="about-avail {{ if $about.status.available }}about-avail--open{{ end }}">
                     <span class="about-avail-dot"></span>
                     {{ $about.status.label }}
                 </div>
 
-                <div class="about-meta-label">// links</div>
+                <div class="meta-label">links</div>
                 {{ range $about.social_links }}
                 <div class="about-meta-val">
                     <a href="{{ .url }}"><span class="bb">{{ .label }}</span></a>
                 </div>
                 {{ end }}
 
-                <div class="about-meta-label">// skills</div>
+                <div class="meta-label">skills</div>
                 <div class="about-skill-bars">
                     {{ range $about.skill_bars }}
                     <div class="about-skill-row">
-                        <div class="about-skill-label">
+                        <div class="about-skill-label dg">
                             <span>{{ .label }}</span>
                             <span>{{ .percent }}%</span>
                         </div>
@@ -61,7 +61,7 @@
                     {{ .Content }}
                 </div>
 
-                <div class="about-sec-head">stack</div>
+                <div class="meta-label">stack</div>
                 <div class="about-stack">
                     {{ range $about.skills }}
                         {{ if .show_stack }}
