@@ -15,6 +15,9 @@ pagination.pagerSize = 7
   centerTheme = false
 
 [markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4

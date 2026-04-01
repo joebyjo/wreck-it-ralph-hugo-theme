@@ -258,11 +258,11 @@ kbd {
 }
 
 kbd {
-  border-top: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  border-left: 1px solid var(--accent);
-  border-right: 1px solid var(--accent);
-  border-bottom: 4px solid var(--accent);
-  border-radius: 4px;
+  border-radius: 5px;
+  margin: 0 10px 0 5px;
+  border: 2px solid var(--accent);
+  box-shadow: 3px 3px var(--accent);
+  cursor: pointer;
 }
 
 code code {
