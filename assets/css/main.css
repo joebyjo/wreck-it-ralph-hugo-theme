@@ -512,7 +512,7 @@ a:hover {
 
 .post-content {
     background: color-mix(in srgb, var(--foreground) 5%, transparent) !important;
-    padding: 20px 70px;
+    padding: 20px 30px;
     border-radius: var(--radius);
     border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
 }

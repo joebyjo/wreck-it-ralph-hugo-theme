@@ -41,11 +41,14 @@
   display: flex;
   gap: 0;
   align-items: flex-start;
-  width: 50vw;
+  width: 100%;
+  max-width: 1075px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .post-toc-sidebar {
-  width: 12.5vw;
+  width: 250px;
   flex-shrink: 0;
   position: sticky;
   top: 20px;
@@ -149,7 +152,9 @@
 .post-body {
   flex: 1;
   min-width: 0;
-  width: 100%;
+  width: 75ch;
+  max-width: 75ch;
+  margin-left: auto;
 }
 
 .post-title::after {
@@ -204,6 +209,12 @@ h6:hover .hanchor {
     flex-direction: column;
     gap: 0;
     width: 90vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-body {
+    width: 100%;
   }
 
   .post-toc-sidebar {
