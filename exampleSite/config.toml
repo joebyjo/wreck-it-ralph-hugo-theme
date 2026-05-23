@@ -14,8 +14,12 @@ pagination.pagerSize = 7
   fullWidthTheme = false
   centerTheme = false
 
+[params.umami]
+  enabled = true
+  script = "https://cloud.umami.is/script.js"
+  websiteID = "YOUR-ID-HERE"
+
 [markup]
-  defaultMarkdownHandler = "goldmark"
   [markup.goldmark.renderer]
     unsafe = true
   [markup.tableOfContents]
@@ -37,3 +41,4 @@ pagination.pagerSize = 7
     name = "About"
     url = "/about/"
     weight = 1
+    

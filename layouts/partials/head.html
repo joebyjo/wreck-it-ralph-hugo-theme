@@ -14,6 +14,14 @@
 <link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
+<!-- loading umami analytics if enabled -->
+{{ if and .Site.Params.umami.enabled (not hugo.IsServer) }}
+<script async
+        src="{{ .Site.Params.umami.script }}"
+        data-website-id="{{ .Site.Params.umami.websiteID }}">
+</script>
+{{ end }}
+
 <!-- Loading all CSS files -->
 {{ $css := resources.Match "css/*.css" }}
 {{ range $css }}
