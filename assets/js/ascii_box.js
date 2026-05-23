@@ -26,7 +26,20 @@ function resizeAsciiBox() {
     rowsContainer.textContent = ASCII_ROW.repeat(rowCount);
 }
 
-document.addEventListener('DOMContentLoaded', resizeAsciiBox);
+// wait until everything loads
+window.addEventListener('load', () => {
+    resizeAsciiBox();
+
+    const content = document.querySelector('.content-container');
+    if (!content) return;
+
+    // recalculate whenever content size changes
+    const observer = new ResizeObserver(() => {
+        resizeAsciiBox();
+    });
+
+    observer.observe(content);
+});
 
 document.addEventListener('toggle', function (e) {
     if (e.target.tagName === 'DETAILS') {

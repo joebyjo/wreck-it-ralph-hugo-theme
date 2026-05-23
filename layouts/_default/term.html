@@ -3,9 +3,9 @@
     {{- partial "ascii_box.html" . -}}
     <div class="content-container text-wrap">
 
-        <h1 class="post-title">
-            <a href="{{ .Permalink }}"><span class="y">Posts for: #{{ .Title | markdownify }}</span></a>
-        </h1>
+        <span class="section-divider y">
+            <span class="w">Posts for #{{ .Title }}</span>
+        </span>
 
         {{ with .Content }}
         <div class="item-description">
@@ -13,25 +13,36 @@
         </div>
         {{ end }}
 
-        <div class="item">
-            {{ range .Paginator.Pages }}
-            <div class="item">
-                <div>
-                    <span class="gy">::</span>
-                    <a href="{{ .RelPermalink }}">
-                        <span class="bb">{{ .Title }}</span>
-                        <span class="pnk">[Open]</span>
-                    </a>
-                </div>
+        <div class="cmd">ls -la ~/posts/tagged/{{ .Title }}</div>
+        <div class="ls-total dg">total {{ len .Paginator.Pages }}</div>
 
-                {{ with .Params.description }}
-                <div class="item-description">
-                    <span class="prp">"{{ . }}"</span>
-                </div>
-                {{ end }}
+        {{ range .Paginator.Pages }}
+        <a href="{{ .RelPermalink }}" class="ls-entry">
+
+            <div class="ls-row">
+                <span class="ls-perm dy">-rw-r--r--</span>
+
+                <span class="ls-date do">
+                    {{ .Date.Format "Jan 2006" }}
+                </span>
+
+                <span class="ls-name bb">
+                    {{ .Title }}
+                </span>
+
+                <span class="ls-size dg">
+                    {{ div (len .Content) 1024 }}.{{ mod (div (len .Content) 102) 10 }}K
+                </span>
+            </div>
+
+            {{ with .Params.description }}
+            <div class="ls-desc prp">
+                "{{ . }}"
             </div>
             {{ end }}
-        </div>
+
+        </a>
+        {{ end }}
 
         {{ partial "pagination.html" . }}
     </div>

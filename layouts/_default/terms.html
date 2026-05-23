@@ -4,30 +4,49 @@
 
     <div class="content-container text-wrap">
 
-        <h1 class="post-title">
-            <a href="{{ .Permalink }}"><span class="y">{{ .Title | markdownify }}</span></a>
-        </h1>
+        <span class="section-divider y">
+            <span class="w">{{ .Title }}</span>
+        </span>
 
-        <div class="item">
-            {{ $type := .Type }}
-            {{ range $key, $value := .Data.Terms.Alphabetical }}
-                {{ $name := .Name }}
-                {{ $count := .Count }}
+        <div class="cmd">ls -la ~/tags</div>
+        <div class="ls-total dg">total {{ len .Data.Terms }}</div>
 
-                {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-                <div class="item">
-                    <div>
-                        <span class="gy">::</span>
-                        <a href="{{ .Permalink }}">
-                            <span class="bb">{{ .Name }}</span>
-                            <span class="pnk">[{{ $count }}]</span>
-                        </a>
-                    </div>
+        {{ $type := .Type }}
+
+        {{ range $key, $value := .Data.Terms.Alphabetical }}
+
+            {{ $name := .Name }}
+            {{ $count := .Count }}
+
+            {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+
+            <a href="{{ .Permalink }}" class="ls-entry">
+
+                <div class="ls-row">
+
+                    <span class="ls-perm dy">
+                        drwxr-xr-x
+                    </span>
+
+                    <span class="ls-date do">
+                        tags
+                    </span>
+
+                    <span class="ls-name bb">
+                        #{{ .Name }}
+                    </span>
+
+                    <span class="ls-size dg">
+                        {{ $count }} posts
+                    </span>
+
                 </div>
-                {{ end }}
+
+            </a>
 
             {{ end }}
-        </div>
+
+        {{ end }}
 
     </div>
 </div>
